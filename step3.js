@@ -1,16 +1,13 @@
 var https = require('https');
 
 
-function getAndPrintHTML() {
 
-    var requestOptions = {
-        host: 'sytantris.github.io',
-        path: '/http-examples/step2.html'
-    };
+function getAndPrintHTML(options) {
+
 
     /* Add your code here */
 
-    https.get(requestOptions, function (response) {
+    https.get(options, function (response) {
         var storageData = ""
 
 
@@ -29,11 +26,13 @@ function getAndPrintHTML() {
 
     })
 
-
-
-
 }
 
-getAndPrintHTML();
 
-//https.request( options, callback ).end();
+var requestOptions = {
+    host: 'sytantris.github.io',
+    path: '/http-examples/step3.html'
+};
+
+getAndPrintHTML(requestOptions);
+
